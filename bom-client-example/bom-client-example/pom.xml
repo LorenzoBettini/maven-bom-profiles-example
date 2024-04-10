@@ -114,7 +114,6 @@
 							<goals>
 								<goal>copy-dependencies</goal>
 							</goals>
-							<phase>verify</phase>
 							<configuration>
 								<outputDirectory>lib</outputDirectory>
 								<includeScope>runtime</includeScope>
