@@ -7,12 +7,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<org.eclipse.jdt.core-version>3.37.0</org.eclipse.jdt.core-version>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.eclipse.jdt</groupId>
 				<artifactId>org.eclipse.jdt.core</artifactId>
-				<version>3.37.0</version>
+				<version>${org.eclipse.jdt.core-version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -23,15 +27,9 @@
 			<activation>
 				<jdk>[11,17)</jdk>
 			</activation>
-			<dependencyManagement>
-				<dependencies>
-					<dependency>
-						<groupId>org.eclipse.jdt</groupId>
-						<artifactId>org.eclipse.jdt.core</artifactId>
-						<version>3.33.0</version>
-					</dependency>
-				</dependencies>
-			</dependencyManagement>
+			<properties>
+				<org.eclipse.jdt.core-version>3.33.0</org.eclipse.jdt.core-version>
+			</properties>
 		</profile>
 	</profiles>
 </project>
