@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.examples</groupId>
+	<artifactId>bom-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.jdt</groupId>
+				<artifactId>org.eclipse.jdt.core</artifactId>
+				<version>3.37.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<profiles>
+		<profile>
+			<id>before-java-17</id>
+			<activation>
+				<jdk>[11,17)</jdk>
+			</activation>
+			<dependencyManagement>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.jdt</groupId>
+						<artifactId>org.eclipse.jdt.core</artifactId>
+						<version>3.33.0</version>
+					</dependency>
+				</dependencies>
+			</dependencyManagement>
+		</profile>
+	</profiles>
+</project>
